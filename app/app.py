@@ -43,7 +43,7 @@ def main():
         knn = knn_training(sample)
         return knn
 
-    @st.cache_data
+    @st.cache
     def load_infos_gen(data):
         lst_infos = [data.shape[0],
                      round(data["AMT_INCOME_TOTAL"].mean(), 2),
@@ -61,24 +61,25 @@ def main():
         data_client = data[data.index == int(id)]
         return data_client
 
-    @st.cache_data
+    @st.cache
     def load_age_population(data):
         data_age = round((data["DAYS_BIRTH"] / 365), 2)
         return data_age
 
-    @st.cache_data
+    @st.cache
     def load_income_population(sample):
         df_income = pd.DataFrame(sample["AMT_INCOME_TOTAL"])
         df_income = df_income.loc[df_income['AMT_INCOME_TOTAL'] < 200000, :]
         return df_income
 
-    @st.cache_data
+    @st.cache
     def load_prediction(_sample, _id, _clf):
         X = sample.iloc[:, :-1]
         score = clf.predict_proba(X[X.index == int(_id)])[:, 1]
         return score
 
-    @st.cache_data
+    @st.cache
+   
     def load_kmeans(sample, id, mdl):
         index = sample[sample.index == int(id)].index.values
         index = index[0]
@@ -87,7 +88,7 @@ def main():
         df_neighbors = pd.concat([df_neighbors, data], axis=1)
         return df_neighbors.iloc[:, 1:].sample(10)
 
-    @st.cache_data
+    @st.cache
     def knn_training(sample):
       knn = knn.fit(sample)
       return knn
