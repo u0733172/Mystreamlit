@@ -9,7 +9,7 @@ import plotly.express as px
 from zipfile import ZipFile
 import sklearn.cluster as KMeans
 
-
+st.set_page_config()
 plt.style.use('fivethirtyeight')
 
 
@@ -116,10 +116,10 @@ def main():
     st.sidebar.header("**General Info**")
 
     # Loading selectbox
-      chk_id = st.sidebar.selectbox("Client ID", id_client)
+    chk_id = st.sidebar.selectbox("Client ID", id_client)
 
     # Loading general info
-      nb_credits, rev_moy, credits_moy, targets = load_infos_gen(data)
+    nb_credits, rev_moy, credits_moy, targets = load_infos_gen(data)
 
     ### Display of information in the sidebar ###
     # Number of loans in the sample
@@ -256,4 +256,4 @@ def main():
 
 
 if __name__ == '__main__':
-   main()
+    main()
