@@ -90,14 +90,14 @@ def main():
 
     @st.cache
     def knn_training(sample):
-      knn = knn.fit(sample)
-      return knn
+        knn = knn.fit(sample)
+        return knn
 
         # Loading data……
 
-    data, sample, target, description = load_data()
-    id_client = sample.index.values
-    clf = load_model()
+        data, sample, target, description = load_data()
+        id_client = sample.index.values
+        clf = load_model()
 
     #######################################
     # SIDEBAR
