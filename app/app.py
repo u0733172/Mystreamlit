@@ -34,7 +34,7 @@ def main():
 
     def load_model():
         '''loading the trained model'''
-        pickle_in = open('..\model\LGBMClassifier.pkl', 'rb')
+        pickle_in = open('../model\LGBMClassifier.pkl', 'rb')
         clf = pickle.load(pickle_in)
         return clf
 
@@ -116,7 +116,7 @@ def main():
     st.sidebar.header("**General Info**")
 
     # Loading selectbox
-    chk_id = st.sidebar.selectbox("Client ID",'id_client')
+    chk_id = st.sidebar.selectbox("Client ID",sample.index.values)
     # Loading general info
     nb_credits, rev_moy, credits_moy, targets = load_infos_gen(data)
 
