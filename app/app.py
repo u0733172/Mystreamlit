@@ -117,7 +117,7 @@ def main():
 
     # Loading selectbox
     id_client = sample.index.values
-    chk_id = st.sidebar.selectbox("Client ID", id_client = sample.index.values)
+    chk_id = st.sidebar.selectbox("Client ID", id_client)
     # Loading general info
     nb_credits, rev_moy, credits_moy, targets = load_infos_gen(data)
 
