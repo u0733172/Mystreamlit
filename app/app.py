@@ -87,7 +87,7 @@ def main():
 
     @st.cache
     def knn_training(sample):
-        knn = knn.fit(sample)
+        knn = KMeans.fit(sample)
         return knn
 
         # Loading data……
