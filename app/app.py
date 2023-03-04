@@ -16,7 +16,7 @@ def main() :
 
     @st.cache
     def load_data():
-        z = ZipFile('data/default_risk.zip')
+        z = ZipFile("data/default_risk.zip")
         data = pd.read_csv(z.open('default_risk.csv'), index_col='SK_ID_CURR', encoding ='utf-8')
 
         z = ZipFile("data/X_sample.zip")
@@ -32,7 +32,7 @@ def main() :
 
     def load_model():
         '''loading the trained model'''
-        pickle_in = open('app/model/LGBMClassifier.pkl', 'rb') 
+        pickle_in = open('model/LGBMClassifier.pkl', 'rb') 
         clf = pickle.load(pickle_in)
         return clf
 
