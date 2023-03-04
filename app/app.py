@@ -9,12 +9,9 @@ import plotly.express as px
 from zipfile import ZipFile
 import sklearn.cluster as KMeans
 
-
 plt.style.use('fivethirtyeight')
 
-
 sns.set_style('darkgrid')
-
 
 def main():
     @st.cache
@@ -132,7 +129,6 @@ def main():
     # AMT CREDIT
     st.sidebar.markdown("<u>Average loan amount (USD) :</u>", unsafe_allow_html=True)
     st.sidebar.text(credits_moy)
-
     # PieChart
     # st.sidebar.markdown("<u>......</u>", unsafe_allow_html=True)
     fig, ax = plt.subplots(figsize=(5, 5))
